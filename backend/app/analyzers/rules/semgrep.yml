@@ -1,0 +1,10 @@
+rules:
+  - id: synthetic-sql-f-string
+    languages: [python]
+    message: SQL query contains interpolated input
+    severity: WARNING
+    patterns:
+      - pattern: $CONN.execute($QUERY)
+      - metavariable-regex:
+          metavariable: $QUERY
+          regex: "f.*"

@@ -12,7 +12,10 @@ class Settings(BaseSettings):
     github_webhook_secret: str | None = None
     llm_provider: str | None = None
     llm_api_key: str | None = None
+    llm_base_url: str | None = None
     llm_model: str | None = None
+    llm_timeout_seconds: float = 20.0
+    llm_max_retries: int = 2
     database_url: str = "sqlite:///./agentic_code_reviewer.db"
     redis_url: str | None = None
 

@@ -1,0 +1,12 @@
+{
+  "synthetic": true,
+  "dependencies": [
+    {
+      "name": "requests",
+      "version": "2.19.0",
+      "vulns": [
+        {"id": "CVE-SYNTHETIC-REQUESTS", "description": "Synthetic recorded dependency risk for offline tests."}
+      ]
+    }
+  ]
+}

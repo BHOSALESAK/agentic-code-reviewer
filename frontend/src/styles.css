@@ -1,0 +1,31 @@
+:root {
+  font-family: Georgia, "Times New Roman", serif;
+  color: #f5f0e8;
+  background: #17231f;
+  font-synthesis: none;
+}
+
+* { box-sizing: border-box; }
+body { margin: 0; min-width: 320px; }
+
+.shell { min-height: 100vh; padding: 28px clamp(24px, 7vw, 110px); background: radial-gradient(circle at 85% 15%, #38594d 0, transparent 32%), #17231f; }
+.topbar { display: flex; align-items: center; gap: 12px; border-bottom: 1px solid #68766e; padding-bottom: 18px; font: 600 13px/1.2 Arial, sans-serif; letter-spacing: 0.02em; }
+.mark { display: grid; place-items: center; width: 34px; height: 34px; background: #e8c46a; color: #17231f; font-size: 11px; }
+.brand { color: #f5f0e8; }
+.mode { margin-left: auto; color: #aab8af; font-size: 11px; }
+.hero { max-width: 840px; padding: clamp(80px, 15vh, 160px) 0 100px; }
+.eyebrow, .label { margin: 0 0 16px; color: #e8c46a; font: 700 11px/1.2 Arial, sans-serif; letter-spacing: 0.16em; text-transform: uppercase; }
+h1 { margin: 0; font-size: clamp(52px, 8vw, 108px); font-weight: 400; line-height: 0.95; letter-spacing: -0.04em; }
+h1 em { color: #e8c46a; font-style: italic; }
+.intro { max-width: 440px; margin: 32px 0 0; color: #c4cec7; font-size: 19px; line-height: 1.45; }
+.status-panel { display: flex; gap: clamp(24px, 8vw, 100px); margin-top: 56px; border-top: 1px solid #68766e; padding-top: 20px; }
+.status-panel div { display: grid; gap: 8px; }
+.label { margin: 0; color: #94a69b; font-size: 9px; }
+.status-panel strong { font: 600 15px Arial, sans-serif; }
+.online { color: #9bd49a; }.offline { color: #e9856e; }.pending { color: #e8c46a; }
+.next-step { display: flex; align-items: center; gap: 26px; max-width: 720px; border-top: 1px solid #68766e; padding-top: 22px; }
+.step-number { color: #e8c46a; font: 700 12px Arial, sans-serif; }
+h2 { margin: 0 0 7px; font-size: 28px; font-weight: 400; }
+.next-step p:not(.eyebrow) { margin: 0; color: #aebbb3; font-size: 15px; line-height: 1.4; }
+.arrow { margin-left: auto; color: #e8c46a; font-size: 28px; }
+@media (max-width: 620px) { .mode { display: none; } .status-panel { flex-wrap: wrap; gap: 22px; } .hero { padding-top: 90px; } .next-step { align-items: flex-start; } }

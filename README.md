@@ -50,8 +50,8 @@ backend into `.venv` and installs frontend dependencies with pnpm.
 ## Planned milestones
 
 - [x] Milestone 1: scaffolding, dependencies, health endpoints, local servers
-- [ ] Milestone 2: backend foundations, models, persistence abstractions, tests
-- [ ] Milestone 3: GitHub PR retrieval and repository context extraction
+- [x] Milestone 2: backend foundations, models, persistence abstractions, tests
+- [x] Milestone 3: GitHub PR retrieval and repository context extraction
 - [ ] Milestone 4: scanners, specialist agents, and LangGraph workflow
 - [ ] Milestone 5: verification, deduplication, retries, and partial results
 - [ ] Milestone 6: complete dashboard and review workflow

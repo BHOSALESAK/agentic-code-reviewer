@@ -6,14 +6,24 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc -p tsconfig.json --noEmit && vite build",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run"
   },
   "dependencies": {
     "@vitejs/plugin-react": "latest",
+    "@tanstack/react-query": "latest",
+    "@testing-library/jest-dom": "latest",
+    "@testing-library/react": "latest",
+    "@testing-library/user-event": "latest",
+    "@types/node": "latest",
+    "jsdom": "^24.1.3",
+    "lucide-react": "latest",
+    "react-router-dom": "latest",
     "vite": "latest",
     "typescript": "latest",
     "react": "latest",
-    "react-dom": "latest"
+    "react-dom": "latest",
+    "vitest": "latest"
   },
   "devDependencies": {
     "@types/react": "latest",

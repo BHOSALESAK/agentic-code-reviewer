@@ -13,7 +13,7 @@ class Settings(BaseSettings):
     llm_provider: str | None = None
     llm_api_key: str | None = None
     llm_model: str | None = None
-    database_url: str | None = None
+    database_url: str = "sqlite:///./agentic_code_reviewer.db"
     redis_url: str | None = None
 
     model_config = SettingsConfigDict(env_file=".env", extra="ignore")

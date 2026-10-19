@@ -29,8 +29,8 @@ uvicorn app.main:app --reload --port 8000
 
 ```bash
 cd frontend
-npm install
-npm run dev
+corepack pnpm install
+corepack pnpm run dev
 ```
 
 Open http://localhost:5173. The frontend expects the backend at http://localhost:8000.
@@ -38,10 +38,14 @@ Open http://localhost:5173. The frontend expects the backend at http://localhost
 ## Verification
 
 ```bash
-cd backend && pytest
-cd frontend && npm run typecheck && npm run build
+make test
+make lint
+make build
 curl http://localhost:8000/api/v1/health
 ```
+
+The combined development command is `make dev`. `make bootstrap` installs the
+backend into `.venv` and installs frontend dependencies with pnpm.
 
 ## Planned milestones
 

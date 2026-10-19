@@ -1,0 +1,11 @@
+{
+  "synthetic": true,
+  "note": "These labels are synthetic pipeline fixtures, not benchmark evidence.",
+  "defects": [
+    {"id": "sql-injection-01", "category": "Security", "file": "app.py", "start_line": 4, "end_line": 4, "description": "User input is interpolated into a SQL query."},
+    {"id": "swallowed-exception-01", "category": "Error Handling", "file": "app.py", "start_line": 12, "end_line": 12, "description": "The file-read failure is swallowed and replaced with an ambiguous empty result."},
+    {"id": "boundary-error-01", "category": "Bug and Logic", "file": "app.py", "start_line": 17, "end_line": 17, "description": "The upper-bound check allows an index equal to the list length."},
+    {"id": "missing-test-01", "category": "Test Adequacy", "file": "tests/test_app.py", "start_line": 1, "end_line": 5, "description": "The boundary and failure behavior introduced by the change has no test."},
+    {"id": "dependency-risk-01", "category": "Dependency", "file": "requirements.txt", "start_line": 1, "end_line": 1, "description": "The fixture pins an intentionally vulnerable requests version."}
+  ]
+}

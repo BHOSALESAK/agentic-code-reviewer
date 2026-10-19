@@ -1,0 +1,27 @@
+{
+  "fixture_id": "large",
+  "repository_fixture": "large_repo",
+  "number": 2,
+  "title": "Expand service modules",
+  "state": "open",
+  "html_url": "https://github.com/synthetic/demo/pull/2",
+  "base": {"sha": "base-large-0001", "repo": {"full_name": "synthetic/demo"}},
+  "head": {"sha": "head-large-0001", "repo": {"full_name": "synthetic/demo"}},
+  "changed_files": 14,
+  "files": [
+    {"filename": "README.md", "status": "modified", "additions": 1, "deletions": 0, "changes": 1, "patch": "@@ -0,0 +1 @@\n+Synthetic large repository fixture for bounded context tests."},
+    {"filename": "requirements.txt", "status": "modified", "additions": 1, "deletions": 0, "changes": 1, "patch": "@@ -0,0 +1 @@\n+requests==2.19.0"},
+    {"filename": "module01.py", "status": "added", "additions": 2, "deletions": 0, "changes": 2, "patch": "@@ -0,0 +1,2 @@\n+def value() -> int:\n+    return 1"},
+    {"filename": "module02.py", "status": "added", "additions": 2, "deletions": 0, "changes": 2, "patch": "@@ -0,0 +1,2 @@\n+def value() -> int:\n+    return 2"},
+    {"filename": "module03.py", "status": "added", "additions": 2, "deletions": 0, "changes": 2, "patch": "@@ -0,0 +1,2 @@\n+def value() -> int:\n+    return 3"},
+    {"filename": "module04.py", "status": "added", "additions": 2, "deletions": 0, "changes": 2, "patch": "@@ -0,0 +1,2 @@\n+def value() -> int:\n+    return 4"},
+    {"filename": "module05.py", "status": "added", "additions": 2, "deletions": 0, "changes": 2, "patch": "@@ -0,0 +1,2 @@\n+def value() -> int:\n+    return 5"},
+    {"filename": "module06.py", "status": "added", "additions": 2, "deletions": 0, "changes": 2, "patch": "@@ -0,0 +1,2 @@\n+def value() -> int:\n+    return 6"},
+    {"filename": "module07.py", "status": "added", "additions": 2, "deletions": 0, "changes": 2, "patch": "@@ -0,0 +1,2 @@\n+def value() -> int:\n+    return 7"},
+    {"filename": "module08.py", "status": "added", "additions": 2, "deletions": 0, "changes": 2, "patch": "@@ -0,0 +1,2 @@\n+def value() -> int:\n+    return 8"},
+    {"filename": "module09.py", "status": "added", "additions": 2, "deletions": 0, "changes": 2, "patch": "@@ -0,0 +1,2 @@\n+def value() -> int:\n+    return 9"},
+    {"filename": "module10.py", "status": "added", "additions": 2, "deletions": 0, "changes": 2, "patch": "@@ -0,0 +1,2 @@\n+def value() -> int:\n+    return 10"},
+    {"filename": "module11.py", "status": "added", "additions": 2, "deletions": 0, "changes": 2, "patch": "@@ -0,0 +1,2 @@\n+def value() -> int:\n+    return 11"},
+    {"filename": "module12.py", "status": "added", "additions": 2, "deletions": 0, "changes": 2, "patch": "@@ -0,0 +1,2 @@\n+def value() -> int:\n+    return 12"}
+  ]
+}

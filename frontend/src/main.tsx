@@ -13,7 +13,7 @@ function App() {
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
-    fetch("http://localhost:8000/api/v1/health")
+    fetch("/api/v1/health")
       .then((response) => {
         if (!response.ok) throw new Error(`Backend returned ${response.status}`);
         return response.json() as Promise<Health>;

@@ -17,7 +17,7 @@ def error_payload(code: str, message: str, details: list[dict[str, str]] | None 
 
 async def http_exception_handler(request: Request, exc: HTTPException) -> JSONResponse:
     messages = {404: "Resource not found", 405: "Method not allowed"}
-    message = messages.get(exc.status_code, "Request could not be processed")
+    message = messages.get(exc.status_code, str(exc.detail) if isinstance(exc.detail, str) else "Request could not be processed")
     return JSONResponse(status_code=exc.status_code, content=error_payload("HTTP_ERROR", message))
 
 

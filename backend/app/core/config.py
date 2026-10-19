@@ -7,7 +7,7 @@ class Settings(BaseSettings):
     app_name: str = "Agentic AI Code Reviewer"
     app_env: str = "demo"
     log_level: str = "INFO"
-    frontend_origin: str = "http://localhost:5173"
+    frontend_origins: str = "http://127.0.0.1:5173,http://localhost:5173"
     github_token: str | None = None
     github_webhook_secret: str | None = None
     llm_provider: str | None = None
@@ -21,6 +21,10 @@ class Settings(BaseSettings):
     @property
     def demo_mode(self) -> bool:
         return self.app_env.lower() in {"demo", "development", "test"}
+
+    @property
+    def cors_origins(self) -> list[str]:
+        return [origin.strip() for origin in self.frontend_origins.split(",") if origin.strip() and origin.strip() != "*"]
 
 
 @lru_cache

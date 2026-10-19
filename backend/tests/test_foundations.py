@@ -46,8 +46,8 @@ def test_finding_rejects_invalid_location_or_confidence(overrides: dict) -> None
 
 def test_settings_use_environment_values(monkeypatch: pytest.MonkeyPatch) -> None:
     monkeypatch.setenv("APP_ENV", "test")
-    monkeypatch.setenv("FRONTEND_ORIGIN", "http://test.local")
+    monkeypatch.setenv("FRONTEND_ORIGINS", "http://test.local,http://test.local:5173")
     settings = Settings()
     assert settings.app_env == "test"
-    assert settings.frontend_origin == "http://test.local"
+    assert settings.cors_origins == ["http://test.local", "http://test.local:5173"]
     assert settings.database_url.startswith("sqlite")

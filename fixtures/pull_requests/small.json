@@ -1,0 +1,16 @@
+{
+  "fixture_id": "small",
+  "repository_fixture": "small_repo",
+  "number": 1,
+  "title": "Add user lookup and pagination",
+  "state": "open",
+  "html_url": "https://github.com/synthetic/demo/pull/1",
+  "base": {"sha": "base-small-0001", "repo": {"full_name": "synthetic/demo"}},
+  "head": {"sha": "head-small-0001", "repo": {"full_name": "synthetic/demo"}},
+  "changed_files": 3,
+  "files": [
+    {"filename": "app.py", "status": "modified", "additions": 16, "deletions": 0, "changes": 16, "patch": "@@ -0,0 +1,19 @@\n+import sqlite3\n+\n+\n+def find_user(connection: sqlite3.Connection, username: str):\n+    query = f\"SELECT * FROM users WHERE name = '{username}'\"\n+    return connection.execute(query).fetchone()\n+\n+\n+def load_settings(path: str) -> str:\n+    try:\n+        return open(path, encoding=\"utf-8\").read()\n+    except OSError:\n+        pass\n+    return \"\"\n+\n+\n+def page(items: list[str], index: int) -> str:\n+    if index > len(items):\n+        raise IndexError(index)\n+    return items[index]"},
+    {"filename": "tests/test_app.py", "status": "added", "additions": 5, "deletions": 0, "changes": 5, "patch": "@@ -0,0 +1,5 @@\n+from app import page\n+\n+\n+def test_page_returns_item() -> None:\n+    assert page([\"first\"], 0) == \"first\""},
+    {"filename": "requirements.txt", "status": "modified", "additions": 1, "deletions": 0, "changes": 1, "patch": "@@ -0,0 +1 @@\n+requests==2.19.0"}
+  ]
+}

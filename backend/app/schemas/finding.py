@@ -60,6 +60,7 @@ class Finding(BaseModel):
     verification_explanation: str | None = Field(default=None, max_length=5000)
     supporting_tools: list[str] = Field(default_factory=list, max_length=20)
     supporting_rule_ids: list[str] = Field(default_factory=list, max_length=20)
+    supporting_agents: list[str] = Field(default_factory=list, max_length=20)
     is_changed_line: bool | None = None
     publication_status: PublicationStatus = PublicationStatus.NOT_PUBLISHED
     created_at: datetime = Field(default_factory=lambda: datetime.now(UTC))

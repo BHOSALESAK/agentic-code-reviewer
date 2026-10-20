@@ -69,3 +69,32 @@ The graph returns structured results and may optionally publish approved GitHub
 comments. Publication is disabled by default and runs only after explicit
 authorization. The graph then ends with review status, findings, provenance,
 partial failures, and execution metadata.
+
+## Implemented analysis graph
+
+The current graph validates requests, fetches fixture or GitHub data, builds
+bounded context, plans tasks, and runs the four specialist agents plus Semgrep,
+Bandit, and pip-audit with bounded parallelism. Results are aggregated with
+duplicate-finding keys. Failed and timed-out tasks retry once through a
+conditional edge; unavailable scanners remain explicit and are never treated as
+clean.
+
+The verification node is a documented pass-through that preserves findings as
+`Unverified`; the critic is deferred to the next milestone. Validated severity
+and confidence values are retained, and confidence is not a calibrated
+probability. Review runs, findings, agent executions, tool statuses, failures,
+usage metadata, and trace entries are persisted. A repository, pull request,
+and head-commit key prevents duplicate runs.
+
+## Verification
+
+Candidate findings are deduplicated by category, overlapping location, and
+file while retaining supporting agent, scanner, and rule provenance. The
+critic first checks file existence, line ranges, changed-hunk proximity,
+evidence location, scanner provenance, stylistic-only claims, and
+severity/confidence consistency. A structured LLM critic then checks whether
+the explanation follows from delimited untrusted code and whether remediation
+addresses the issue. Decisions are `verified`, `rejected`, or
+`needs_manual_review` with reason codes and check provenance. Critic failures
+always become manual review. Confidence is configurable and is not a
+calibrated probability. Rejected findings remain persisted and retrievable.

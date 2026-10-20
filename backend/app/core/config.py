@@ -16,6 +16,7 @@ class Settings(BaseSettings):
     llm_model: str | None = None
     llm_timeout_seconds: float = 20.0
     llm_max_retries: int = 2
+    verification_min_confidence: float = 0.5
     database_url: str = "sqlite:///./agentic_code_reviewer.db"
     redis_url: str | None = None
 

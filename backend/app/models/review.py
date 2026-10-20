@@ -40,11 +40,13 @@ class PullRequest(Timestamped, Base):
 
 class ReviewRun(Timestamped, Base):
     __tablename__ = "review_runs"
+    __table_args__ = (UniqueConstraint("review_key", name="uq_review_runs_review_key"),)
     id: Mapped[str] = mapped_column(String(36), primary_key=True, default=new_id)
     repository_id: Mapped[str] = mapped_column(ForeignKey("repositories.id", ondelete="CASCADE"), index=True)
     pull_request_id: Mapped[str] = mapped_column(ForeignKey("pull_requests.id", ondelete="CASCADE"), index=True)
     status: Mapped[str] = mapped_column(String(50), index=True)
     commit_sha: Mapped[str | None] = mapped_column(String(200))
+    review_key: Mapped[str] = mapped_column(String(500), unique=True, index=True)
     partial_failure: Mapped[bool] = mapped_column(default=False, nullable=False)
     latency_ms: Mapped[int | None] = mapped_column(Integer)
     usage_metadata: Mapped[dict | None] = mapped_column(JSON)

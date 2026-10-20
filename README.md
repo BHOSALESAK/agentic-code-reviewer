@@ -55,6 +55,8 @@ backend into `.venv` and installs frontend dependencies with pnpm.
 - [x] Milestone 4: scanners, specialist agents, and LangGraph workflow
 - [x] Milestone 5: verification, deduplication, retries, and partial results
 - [ ] Milestone 6: complete dashboard and review workflow
+	Done: live review polling, real overview metrics, findings filters, detail,
+	diff anchoring, and execution trace views. Remaining: evaluation page/data.
 - [ ] Milestone 7: signed webhooks and optional comment publication
 - [ ] Milestone 8: baseline comparison and evaluation metrics
 - [ ] Milestone 9: final verification and documentation
